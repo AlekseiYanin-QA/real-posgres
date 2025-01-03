@@ -154,5 +154,16 @@ public class Repository {
         );
     }
 
+    // Домашнее задание - Реализация нового метода
+    public List<String> getTop10WalkingUsersFromDb() {
+        String sql = "SELECT user_login "
+                + "FROM public.walks "
+                + "GROUP BY user_login "
+                + "ORDER BY COUNT(*) DESC "
+                + "LIMIT 10";
+
+        return jdbcTemplate.queryForList(sql, String.class);
+    }
+
 }
 

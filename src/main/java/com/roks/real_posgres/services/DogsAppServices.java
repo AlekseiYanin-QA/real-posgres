@@ -160,4 +160,9 @@ public class DogsAppServices {
             throw new RuntimeException(e);
         }
     }
+    // Домашнее задание
+    @GetMapping("/max_walks")
+    public List<String> getMaxWalksUsers() {
+        return repository.getTop10WalkingUsersFromDb();
+    }
 }
